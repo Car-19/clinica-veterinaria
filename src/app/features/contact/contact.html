@@ -1,0 +1,139 @@
+<section class="contact-section" id="contacto">
+  <div class="container contact-layout">
+    <div class="contact-info">
+      <span class="eyebrow">Contacto</span>
+      <h2 class="section-title">Pide una <span>cita.</span></h2>
+
+      <p>
+        Puedes llamarnos o escribirnos para consultar o reservar una cita.
+      </p>
+
+      <div class="contact-detail">
+        <span>📍</span>
+        <div>
+          <strong>Visítanos</strong>
+          <p>Calle de la Amistad, 15 · Écija</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <span>📞</span>
+        <div>
+          <strong>Llámanos</strong>
+          <p>955 000 000</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <span>✉️</span>
+        <div>
+          <strong>Escríbenos</strong>
+          <p>hola@clinicaveterinaria.es</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <span>🕒</span>
+        <div>
+          <strong>Horario</strong>
+          <p>Lunes a viernes: 9:00 - 20:00</p>
+          <p>Sábados: 10:00 - 14:00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <h3>Escríbenos</h3>
+      <p class="form-intro">Responderemos lo antes posible.</p>
+
+      @if (success) {
+        <div class="success-message">
+          <span>💚</span>
+          <strong>¡Formulario validado!</strong>
+          <p>
+            Es una demostración: no introduzcas datos personales reales. No se
+            envía ni almacena información.
+          </p>
+        </div>
+      }
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="nombre">Tu nombre *</label>
+          <input
+            id="nombre"
+            type="text"
+            formControlName="nombre"
+            placeholder="¿Cómo te llamas?"
+            minlength="2"
+            maxlength="100"
+          />
+          @if (contactForm.controls.nombre.touched && contactForm.controls.nombre.invalid) {
+            <small>Introduce al menos dos caracteres.</small>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico *</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="tu@email.com"
+            maxlength="254"
+          />
+          @if (contactForm.controls.email.touched && contactForm.controls.email.invalid) {
+            <small>Introduce un correo electrónico válido.</small>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input
+            id="telefono"
+            type="tel"
+            formControlName="telefono"
+            placeholder="Tu teléfono"
+            maxlength="30"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="mascota">Mascota *</label>
+          <select id="mascota" formControlName="mascota">
+            <option value="">Selecciona una opción</option>
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+            <option value="Conejo">Conejo</option>
+            <option value="Otro">Otro</option>
+          </select>
+          @if (contactForm.controls.mascota.touched && contactForm.controls.mascota.invalid) {
+            <small>Selecciona una opción.</small>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea
+            id="mensaje"
+            formControlName="mensaje"
+            rows="4"
+            placeholder="Escribe tu mensaje"
+            minlength="10"
+            maxlength="1000"
+          ></textarea>
+          @if (contactForm.controls.mensaje.touched && contactForm.controls.mensaje.invalid) {
+            <small>Escribe al menos diez caracteres.</small>
+          }
+        </div>
+
+        <button type="submit" class="submit-button">Enviar <span>↗</span></button>
+
+        <p class="privacy-note">
+          * Campos obligatorios. Formulario de demostración: no uses datos
+          reales; no se envían ni almacenan.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

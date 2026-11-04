@@ -1,0 +1,45 @@
+<section class="services-section" id="servicios">
+  <div class="container">
+    <div class="section-heading">
+      <div class="heading-content">
+        <span class="eyebrow">Servicios</span>
+
+        <h2 class="section-title">
+          Atención veterinaria
+        </h2>
+
+        <p class="section-subtitle">
+          Consulta nuestros servicios y contacta con la clínica si tienes alguna duda.
+        </p>
+      </div>
+
+      <a href="#contacto" class="all-services">
+        Pedir cita
+        <span>↗</span>
+      </a>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.id) {
+        <article class="service-card">
+          <div class="card-top">
+            <div class="service-icon">
+              {{ service.icon }}
+            </div>
+
+            <span class="service-number"> 0{{ service.id }} </span>
+          </div>
+
+          <div class="card-content">
+            <h3>{{ service.title }}</h3>
+
+            <p>{{ service.description }}</p>
+
+            <a href="#contacto" class="service-link">Pedir cita <span>→</span></a>
+          </div>
+        </article>
+      }
+    </div>
+
+  </div>
+</section>

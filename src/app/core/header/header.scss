@@ -1,0 +1,173 @@
+
+.header {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-text strong {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logo-text small {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-top: 2px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navigation a {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  padding: 9px 12px;
+  border-radius: 8px;
+  transition:
+    color .2s ease,
+    background-color .2s ease,
+    transform .2s ease;
+}
+
+.navigation a:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.appointment-button {
+  background: var(--primary);
+  color: white;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    background-color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease;
+}
+
+.appointment-button:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 8px 18px #203b3729;
+  transform: translateY(-2px) scale(1.08);
+}
+
+.appointment-button:active {
+  transform: translateY(0) scale(1.02);
+}
+
+.appointment-button span {
+  margin-left: 8px;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--dark);
+  font-size: 27px;
+  padding: 5px;
+  border-radius: 8px;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.menu-toggle:hover {
+  background: var(--primary-light);
+  transform: scale(1.08);
+}
+
+@media (max-width: 850px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 25px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    box-shadow: 0 12px 24px #203b3712;
+  }
+
+  .navigation.open {
+    display: flex;
+  }
+
+  .navigation a {
+    padding: 8px;
+  }
+
+  .appointment-button {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    min-height: 75px;
+    gap: 8px;
+  }
+
+  .navigation {
+    top: 75px;
+  }
+
+  .logo-text strong {
+    font-size: 13px;
+  }
+
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .appointment-button {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="container header-content">
+    <a href="#inicio" class="logo" (click)="closeMenu()">
+      <img class="logo-icon" src="paw-icon.svg" alt="" />
+      <span class="logo-text">
+        <strong>Clínica Veterinaria</strong>
+        <small>Écija</small>
+      </span>
+    </a>
+
+    <nav class="navigation" [class.open]="menuOpen">
+      <a href="#inicio" (click)="closeMenu()">Inicio</a>
+      <a href="#servicios" (click)="closeMenu()">Servicios</a>
+      <a href="#equipo" (click)="closeMenu()">Nuestro equipo</a>
+      <a href="#contacto" (click)="closeMenu()">Contacto</a>
+    </nav>
+
+    <a href="#contacto" class="appointment-button"> Pedir cita <span>↗</span> </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Abrir o cerrar menú"
+    >
+      {{ menuOpen ? '✕' : '☰' }}
+    </button>
+  </div>
+</header>

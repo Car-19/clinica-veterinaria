@@ -1,0 +1,29 @@
+<section class="about-section" id="equipo">
+  <div class="container">
+    <div class="about-intro">
+      <div>
+        <span class="eyebrow">Nuestro equipo</span>
+        <h2 class="section-title">Quiénes <span>somos.</span></h2>
+      </div>
+
+      <p>
+        Veterinaria y auxiliares para cuidar de la salud de tu mascota.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      @for (person of team; track person.name) {
+        <article class="team-card">
+          <div class="team-image">
+            <img [src]="person.image" [alt]="person.name" />
+          </div>
+          <div class="team-info">
+            <h3>{{ person.name }}</h3>
+            <p>{{ person.role }}</p>
+          </div>
+        </article>
+      }
+    </div>
+
+  </div>
+</section>
